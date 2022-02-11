@@ -1,4 +1,4 @@
-package Domain;
+package ProjetoFinalParteSpring.Domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,10 +7,11 @@ import lombok.Data;
 @AllArgsConstructor
 public class CheckList {
     //cabeçalho
+    private int id;
     private String data;
     private String hora;
     private boolean saidaRetorno;
-    private int placa;
+    private String placa;
     private String motorista;
     private double kmVeiculo;
 
@@ -45,4 +46,16 @@ public class CheckList {
     private boolean cintoDeSeguranca;
     private boolean freioDeEstacionamento;
 
+    public CheckList(int id, String data, String hora, boolean saidaRetorno, String placa, String motorista, double kmVeiculo) {
+        this.id = id;
+        this.data = data;
+        this.hora = hora;
+        this.saidaRetorno = saidaRetorno;
+        this.placa = placa;
+        this.motorista = motorista;
+        this.kmVeiculo = kmVeiculo;
+    }
+
+    public CheckList() {
+    }
 }
