@@ -10,43 +10,43 @@ public class CheckList {
     private int id;
     private String data;
     private String hora;
-    private boolean saidaRetorno;
+    private String saidaRetorno;
     private String placa;
     private String motorista;
     private double kmVeiculo;
 
     //infos booleanas
     //Pneus do veiculo
-    private boolean tracao;
-    private boolean rodoar;
-    private boolean calibragemPneus;
-    private boolean estepe;
+    private String tracao;
+    private String rodoar;
+    private String calibragemPneus;
+    private String estepe;
 
     //Freios e suspensao
-    private boolean freioDianteiro;
-    private boolean freioTraseiro;
-    private boolean amortecedor;
-    private boolean molas;
+    private String freioDianteiro;
+    private String freioTraseiro;
+    private String amortecedor;
+    private String molas;
 
     //motor
-    private boolean cambioOleo;
-    private boolean direcaoOleo;
-    private boolean limpezaRadiadorAgua;
-    private boolean oleoMotor;
+    private String cambioOleo;
+    private String direcaoOleo;
+    private String limpezaRadiadorAgua;
+    private String oleoMotor;
 
     //parte externa
-    private boolean retrovisor;
-    private boolean paraBrisa;
-    private boolean paraChoqueDianteiro;
-    private boolean paraChoqueTraseiro;
+    private String retrovisor;
+    private String paraBrisa;
+    private String paraChoqueDianteiro;
+    private String paraChoqueTraseiro;
 
     //parte interna
-    private boolean estofamento;
-    private boolean cortinas;
-    private boolean cintoDeSeguranca;
-    private boolean freioDeEstacionamento;
+    private String estofamento;
+    private String cortinas;
+    private String cintoDeSeguranca;
+    private String freioDeEstacionamento;
 
-    public CheckList(int id, String data, String hora, boolean saidaRetorno, String placa, String motorista, double kmVeiculo) {
+    public CheckList(int id, String data, String hora, String saidaRetorno, String placa, String motorista, double kmVeiculo) {
         this.id = id;
         this.data = data;
         this.hora = hora;
