@@ -118,8 +118,8 @@ public class CheckListDAO {
 
     public CheckList cadastraCheckList(CheckList checkList) {
         try (Connection connection = new ConnectionFactory().recuperarConexao()) {
-            PreparedStatement stm = connection.prepareStatement("INSERT INTO checklist (" +
-                    "data, hora, saidaRetorno, placa, motorista, kmVeiculo, tracao, rodoar, calibragemPneus, "
+            PreparedStatement stm = connection.prepareStatement("INSERT INTO checklist ("
+                     +"data, hora, saidaRetorno, placa, motorista, kmVeiculo, tracao, rodoar, calibragemPneus, "
                      +" estepe, freioDianteiro, freioTraseiro, amortecedor, molas, cambioOleo, "
                      +" direcaoOleo, limpezaRadiadorAgua, oleoMotor, retrovisor, paraBrisa,"
                      +" paraChoqueDianteiro, paraChoqueTraseiro, estofamento, cortinas, "
