@@ -1,40 +1,11 @@
-{
-        "data": "19/02/2020",
-        "hora": "15:10",
-        "saidaRetorno": "false",
-        "placa": "ABB456",
-        "motorista": "true",
-        "kmVeiculo": 3657.2525,
-        "tracao": "false",
-        "rodoar": "true",
-        "calibragemPneus": "false",
-        "estepe": "true",
-        "freioDianteiro": "true",
-        "freioTraseiro": "false",
-        "amortecedor": "false",
-        "molas": "false",
-        "cambioOleo": "false",
-        "direcaoOleo":  "false",
-        "limpezaRadiadorAgua": "false",
-        "oleoMotor":  "true",
-        "retrovistor":  "true",
-        "paraBrisa":   "true",
-        "paraChoqueDianteiro":  "true",
-        "paraChoqueTraseiro":  "true",
-        "estofamento":   "false",
-        "cortinas": "false",
-        "cintoDeSeguranca":  "false",
-        "freioDeEstacionamento":  "false"
-}
-
 CREATE TABLE CHECKLIST (
                            id BIGSERIAL PRIMARY KEY not null,
                            data VARCHAR(20),
                            hora VARCHAR(20),
-                           saidaRetorno VARCHAR(4),
+                           saidaRetorno VARCHAR(7),
                            placa VARCHAR(20),
                            motorista VARCHAR(50),
-                           kmVeiculo double precision,
+                           kmVeiculo VARCHAR(20),
                            tracao VARCHAR(4),
                            rodoar VARCHAR(4),
                            calibragemPneus VARCHAR(4),
@@ -47,7 +18,7 @@ CREATE TABLE CHECKLIST (
                            direcaoOleo VARCHAR(4),
                            limpezaRadiadorAgua VARCHAR(4),
                            oleoMotor VARCHAR(4),
-                           retrovistor VARCHAR(4),
+                           retrovisor VARCHAR(4),
                            paraBrisa VARCHAR(4),
                            paraChoqueDianteiro VARCHAR(4),
                            paraChoqueTraseiro VARCHAR(4),
@@ -56,4 +27,3 @@ CREATE TABLE CHECKLIST (
                            cintoDeSeguranca VARCHAR(4),
                            freioDeEstacionamento VARCHAR(4)
 );
-}

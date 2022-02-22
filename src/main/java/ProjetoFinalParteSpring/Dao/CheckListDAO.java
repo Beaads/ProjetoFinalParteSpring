@@ -30,7 +30,7 @@ public class CheckListDAO {
                 String saidaRetorno = rst.getString("saidaRetorno");
                 String placa = rst.getString("placa");
                 String motorista = rst.getString("motorista");
-                double kmVeiculo = rst.getDouble("kmVeiculo");
+                String kmVeiculo = rst.getString("kmVeiculo");
                 String tracao = rst.getString("tracao");
                 String rodoar = rst.getString("rodoar");
                 String calibragemPneus = rst.getString("calibragemPneus");
@@ -81,7 +81,7 @@ public class CheckListDAO {
                 String saidaRetorno = rst.getString("saidaRetorno");
                 String placa = rst.getString("placa");
                 String motorista = rst.getString("motorista");
-                double kmVeiculo = rst.getDouble("kmVeiculo");
+                String kmVeiculo = rst.getString("kmVeiculo");
                 String tracao = rst.getString("tracao");
                 String rodoar = rst.getString("rodoar");
                 String calibragemPneus = rst.getString("calibragemPneus");
@@ -130,7 +130,7 @@ public class CheckListDAO {
             stm.setString(3, checkList.getSaidaRetorno());
             stm.setString(4, checkList.getPlaca());
             stm.setString(5, checkList.getMotorista());
-            stm.setDouble(6, checkList.getKmVeiculo());
+            stm.setString(6, checkList.getKmVeiculo());
             stm.setString(7, checkList.getTracao());
             stm.setString(8, checkList.getRodoar());
             stm.setString(9, checkList.getCalibragemPneus());

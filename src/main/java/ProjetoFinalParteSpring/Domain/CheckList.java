@@ -13,7 +13,7 @@ public class CheckList {
     private String saidaRetorno;
     private String placa;
     private String motorista;
-    private double kmVeiculo;
+    private String kmVeiculo;
 
     //infos booleanas
     //Pneus do veiculo
@@ -46,7 +46,7 @@ public class CheckList {
     private String cintoDeSeguranca;
     private String freioDeEstacionamento;
 
-    public CheckList(int id, String data, String hora, String saidaRetorno, String placa, String motorista, double kmVeiculo) {
+    public CheckList(int id, String data, String hora, String saidaRetorno, String placa, String motorista, String kmVeiculo) {
         this.id = id;
         this.data = data;
         this.hora = hora;
