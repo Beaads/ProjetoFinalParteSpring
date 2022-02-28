@@ -56,7 +56,6 @@ public class CheckListDAO {
                         paraChoqueTraseiro, estofamento, cortinas, cintoDeSeguranca, freioDeEstacionamento);
                 checklists.add(checklist);
             }
-            connection.close();
         } catch (SQLException | NullPointerException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -107,10 +106,9 @@ public class CheckListDAO {
                         cambioOleo, direcaoOleo, limpezaRadiadorAgua, oleoMotor, retrovisor, paraBrisa,
                         paraChoqueDianteiro, paraChoqueTraseiro, estofamento, cortinas, cintoDeSeguranca,
                         freioDeEstacionamento);
+                connection.close();
                 return check;
             }
-            connection.close();
-
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
 
