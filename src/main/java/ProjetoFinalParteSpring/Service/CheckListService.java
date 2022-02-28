@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class CheckListService {
 
-    private CheckListDAO checkListDAO = new CheckListDAO();
+    private final CheckListDAO checkListDAO = new CheckListDAO();
 
     public List<CheckList> listAll() {
         return checkListDAO.listAllCheckList();
@@ -22,6 +22,4 @@ public class CheckListService {
     public CheckList save(CheckList checkList) {
         return checkListDAO.cadastraCheckList(checkList);
     }
-
-
 }

@@ -2,7 +2,6 @@ package ProjetoFinalParteSpring.Dao;
 
 import ProjetoFinalParteSpring.Connection.ConnectionFactory;
 import ProjetoFinalParteSpring.Domain.CheckList;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,12 +14,11 @@ public class CheckListDAO {
     public List<CheckList> listAllCheckList() {
         List<CheckList> checklists = new ArrayList<>();
         try (Connection connection = new ConnectionFactory().recuperarConexao()) {
-            PreparedStatement stm = connection.prepareStatement("SELECT id, data," +
-                    "                     hora, saidaRetorno, placa, motorista, kmVeiculo, tracao, rodoar, calibragemPneus," +
-                    "                     estepe, freioDianteiro, freioTraseiro, amortecedor, molas, cambioOleo," +
-                    "                     direcaoOleo, limpezaRadiadorAgua, oleoMotor, retrovisor, paraBrisa," +
-                    "                     paraChoqueDianteiro, paraChoqueTraseiro, estofamento, cortinas," +
-                    "                     cintoDeSeguranca, freioDeEstacionamento FROM checklist");
+            PreparedStatement stm = connection.prepareStatement("SELECT id, data, hora, saidaRetorno," +
+                    "placa, motorista, kmVeiculo, tracao, rodoar, calibragemPneus, estepe, freioDianteiro," +
+                    "freioTraseiro, amortecedor, molas, cambioOleo, direcaoOleo, limpezaRadiadorAgua," +
+                    "oleoMotor, retrovisor, paraBrisa, paraChoqueDianteiro, paraChoqueTraseiro, estofamento," +
+                    "cortinas, cintoDeSeguranca, freioDeEstacionamento FROM checklist");
             stm.executeQuery();
             ResultSet rst = stm.getResultSet();
             while (rst.next()) {
@@ -52,10 +50,10 @@ public class CheckListDAO {
                 String cintoDeSeguranca = rst.getString("cintoDeSeguranca");
                 String freioDeEstacionamento = rst.getString("freioDeEstacionamento");
 
-                CheckList checklist = new CheckList(id, data, hora, saidaRetorno, placa, motorista, kmVeiculo, tracao, rodoar,
-                        calibragemPneus, estepe, freioDianteiro, freioTraseiro, amortecedor, molas, cambioOleo, direcaoOleo,
-                        limpezaRadiadorAgua, oleoMotor, retrovisor, paraBrisa, paraChoqueDianteiro, paraChoqueTraseiro,
-                        estofamento, cortinas, cintoDeSeguranca, freioDeEstacionamento);
+                CheckList checklist = new CheckList(id, data, hora, saidaRetorno, placa, motorista, kmVeiculo, tracao,
+                        rodoar, calibragemPneus, estepe, freioDianteiro, freioTraseiro, amortecedor, molas, cambioOleo,
+                        direcaoOleo, limpezaRadiadorAgua, oleoMotor, retrovisor, paraBrisa, paraChoqueDianteiro,
+                        paraChoqueTraseiro, estofamento, cortinas, cintoDeSeguranca, freioDeEstacionamento);
                 checklists.add(checklist);
             }
         } catch (SQLException | NullPointerException | ClassNotFoundException e) {
@@ -103,10 +101,11 @@ public class CheckListDAO {
                 String cintoDeSeguranca = rst.getString("cintoDeSeguranca");
                 String freioDeEstacionamento = rst.getString("freioDeEstacionamento");
 
-                CheckList check = new CheckList(id, data, hora, saidaRetorno, placa, motorista, kmVeiculo, tracao, rodoar,
-                        calibragemPneus, estepe, freioDianteiro, freioTraseiro, amortecedor, molas, cambioOleo, direcaoOleo,
-                        limpezaRadiadorAgua, oleoMotor, retrovisor, paraBrisa, paraChoqueDianteiro, paraChoqueTraseiro,
-                        estofamento, cortinas, cintoDeSeguranca, freioDeEstacionamento);
+                CheckList check = new CheckList(id, data, hora, saidaRetorno, placa, motorista, kmVeiculo,
+                        tracao, rodoar, calibragemPneus, estepe, freioDianteiro, freioTraseiro, amortecedor, molas,
+                        cambioOleo, direcaoOleo, limpezaRadiadorAgua, oleoMotor, retrovisor, paraBrisa,
+                        paraChoqueDianteiro, paraChoqueTraseiro, estofamento, cortinas, cintoDeSeguranca,
+                        freioDeEstacionamento);
                 return check;
             }
 
@@ -119,11 +118,11 @@ public class CheckListDAO {
     public CheckList cadastraCheckList(CheckList checkList) {
         try (Connection connection = new ConnectionFactory().recuperarConexao()) {
             PreparedStatement stm = connection.prepareStatement("INSERT INTO checklist ("
-                     +"data, hora, saidaRetorno, placa, motorista, kmVeiculo, tracao, rodoar, calibragemPneus, "
-                     +" estepe, freioDianteiro, freioTraseiro, amortecedor, molas, cambioOleo, "
-                     +" direcaoOleo, limpezaRadiadorAgua, oleoMotor, retrovisor, paraBrisa,"
-                     +" paraChoqueDianteiro, paraChoqueTraseiro, estofamento, cortinas, "
-                     +" cintoDeSeguranca, freioDeEstacionamento) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, " +
+                    + "data, hora, saidaRetorno, placa, motorista, kmVeiculo, tracao, rodoar, calibragemPneus, "
+                    + " estepe, freioDianteiro, freioTraseiro, amortecedor, molas, cambioOleo, "
+                    + " direcaoOleo, limpezaRadiadorAgua, oleoMotor, retrovisor, paraBrisa,"
+                    + " paraChoqueDianteiro, paraChoqueTraseiro, estofamento, cortinas, "
+                    + " cintoDeSeguranca, freioDeEstacionamento) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, " +
                     "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING ID");
             stm.setString(1, checkList.getData());
             stm.setString(2, checkList.getHora());
