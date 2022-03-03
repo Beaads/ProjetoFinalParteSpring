@@ -13,7 +13,7 @@ public class ConnectionFactory {
         ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
         comboPooledDataSource.setJdbcUrl("jdbc:postgresql://localhost:5432/postgres");
         comboPooledDataSource.setUser("postgres");
-        comboPooledDataSource.setPassword("root");
+        comboPooledDataSource.setPassword("postgres");
         comboPooledDataSource.setMaxPoolSize(30);
 
         this.dataSource = comboPooledDataSource;

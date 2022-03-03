@@ -1,6 +1,6 @@
 package ProjetoFinalParteSpring.Service;
 
-import ProjetoFinalParteSpring.Dao.CheckListDAO;
+import ProjetoFinalParteSpring.Dao.CheckListDao;
 import ProjetoFinalParteSpring.Domain.CheckList;
 import org.springframework.stereotype.Service;
 
@@ -8,18 +8,17 @@ import java.util.List;
 
 @Service
 public class CheckListService {
-
-    private final CheckListDAO checkListDAO = new CheckListDAO();
+    private final CheckListDao checkListDao = new CheckListDao();
 
     public List<CheckList> listAll() {
-        return checkListDAO.listAllCheckList();
+        return checkListDao.listAllCheckList();
     }
 
-    public CheckList findByIdCL(int id) {
-        return checkListDAO.findByIdCheckList(id);
+    public CheckList findByIdChecklist(final int id) {
+        return checkListDao.findByIdCheckList(id);
     }
 
-    public CheckList save(CheckList checkList) {
-        return checkListDAO.cadastraCheckList(checkList);
+    public CheckList save(final CheckList checkList) {
+        return checkListDao.cadastraCheckList(checkList);
     }
 }
