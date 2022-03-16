@@ -1,6 +1,6 @@
-package ProjetoFinalParteSpring.Controller;
+package ProjetoFinalParteSpring.Resource;
 
-import ProjetoFinalParteSpring.Domain.CheckList;
+import ProjetoFinalParteSpring.Domain.CheckListEntity;
 import ProjetoFinalParteSpring.Service.CheckListService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,22 +15,22 @@ import java.util.List;
 
 //http://localhost:8080/checklist
 
-public class CheckListController {
+public class CheckListResource {
 
     private final CheckListService checkListService;
 
     @GetMapping
-    public ResponseEntity<List<CheckList>> list() {
+    public ResponseEntity<List<CheckListEntity>> list() {
         return new ResponseEntity<>(checkListService.listAll(), HttpStatus.OK);
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<CheckList> findById(@PathVariable int id){
-        return new ResponseEntity<>(checkListService.findByIdCL(id), HttpStatus.OK);
+    public ResponseEntity<CheckListEntity> findById(@PathVariable int id){
+        return new ResponseEntity<>(checkListService.findByIdChecklist(id), HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<CheckList> save (@RequestBody CheckList checkList) {
-        return new ResponseEntity<>(checkListService.save(checkList), HttpStatus.CREATED);
+    public ResponseEntity<CheckListEntity> save (@RequestBody CheckListEntity checkListEntity) {
+        return new ResponseEntity<>(checkListService.save(checkListEntity), HttpStatus.CREATED);
     }
 }

@@ -2,10 +2,13 @@ package ProjetoFinalParteSpring.Domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
+
+@NoArgsConstructor
 @AllArgsConstructor
-public class CheckList {
+@Data
+public class CheckListDto {
     private int id;
     private String data;
     private String hora;
@@ -33,4 +36,5 @@ public class CheckList {
     private String cortinas;
     private String cintoDeSeguranca;
     private String freioDeEstacionamento;
+
 }

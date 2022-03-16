@@ -1,25 +1,30 @@
 package ProjetoFinalParteSpring.Service;
 
-import ProjetoFinalParteSpring.Dao.CheckListDAO;
-import ProjetoFinalParteSpring.Domain.CheckList;
+import ProjetoFinalParteSpring.Dao.CheckListDao;
+import ProjetoFinalParteSpring.Domain.CheckListDto;
+import ProjetoFinalParteSpring.Domain.CheckListEntity;
+import ProjetoFinalParteSpring.Mapper.CheckListMapper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class CheckListService {
 
-    private final CheckListDAO checkListDAO = new CheckListDAO();
+    private final CheckListDao checkListDAO;
+    private final CheckListMapper checkListMapper;
 
-    public List<CheckList> listAll() {
+    public List<CheckListEntity> listAll() {
         return checkListDAO.listAllCheckList();
     }
 
-    public CheckList findByIdCL(int id) {
+    public CheckListEntity findByIdChecklist(int id) {
         return checkListDAO.findByIdCheckList(id);
     }
 
-    public CheckList save(CheckList checkList) {
-        return checkListDAO.cadastraCheckList(checkList);
+    public CheckListEntity save(CheckListEntity checkList) {
+        return checkListDAO.save(checkList);
     }
 }
