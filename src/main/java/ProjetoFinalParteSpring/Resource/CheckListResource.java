@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequestMapping("checklist")
 @RestController
@@ -25,7 +26,7 @@ public class CheckListResource {
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<CheckListEntity> findById(@PathVariable int id){
+    public ResponseEntity<Optional> findById(@PathVariable int id){
         return new ResponseEntity<>(checkListService.findByIdChecklist(id), HttpStatus.OK);
     }
 

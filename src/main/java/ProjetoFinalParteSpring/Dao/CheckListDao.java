@@ -8,12 +8,13 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CheckListDao extends JpaRepository<CheckListEntity, Long> {
+public interface CheckListDao extends JpaRepository<CheckListEntity, Integer> {
+
     @Query(value = "select id, data, hora, saidaRetorno," +
             " placa, motorista, kmVeiculo, tracao, rodoar, calibragemPneus, estepe, freioDianteiro," +
             " freioTraseiro, amortecedor, molas, cambioOleo, direcaoOleo, limpezaRadiadorAgua," +
             " oleoMotor, retrovisor, paraBrisa, paraChoqueDianteiro, paraChoqueTraseiro, " +
-            " estofamento, cortinas, cintoDeSeguranca, freioDeEstacionamento from CheckListEntity")
+            " estofamento, cortinas, cintoDeSeguranca, freioDeEstacionamento from CheckListEntity", nativeQuery = true)
     @NotNull
     List<CheckListEntity> listAllCheckList();
 
@@ -23,7 +24,7 @@ public interface CheckListDao extends JpaRepository<CheckListEntity, Long> {
             "amortecedor, molas, cambioOleo, direcaoOleo, limpezaRadiadorAgua, " +
             "oleoMotor, retrovisor, paraBrisa, paraChoqueDianteiro, paraChoqueTraseiro, " +
             "estofamento, cortinas, cintoDeSeguranca, freioDeEstacionamento " +
-            "from CheckListEntity where id = :id")
+            "from CheckListEntity where id = :id", nativeQuery = true)
     @NotNull
     CheckListEntity findByIdCheckList(int id);
 
