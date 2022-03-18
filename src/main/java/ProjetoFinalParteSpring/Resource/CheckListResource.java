@@ -3,6 +3,7 @@ package ProjetoFinalParteSpring.Resource;
 import ProjetoFinalParteSpring.Domain.CheckListEntity;
 import ProjetoFinalParteSpring.Service.CheckListService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,7 @@ import java.util.Optional;
 
 public class CheckListResource {
 
+    @Autowired
     private final CheckListService checkListService;
 
     @GetMapping
