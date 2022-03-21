@@ -3,13 +3,23 @@ import ProjetoFinalParteSpring.Domain.CheckListDto;
 import ProjetoFinalParteSpring.Domain.CheckListEntity;
 import com.sun.istack.NotNull;
 import org.springframework.stereotype.Component;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class CheckListMapper {
     @NotNull
-    public CheckListEntity toEntity(@NotNull CheckListDto dto) {
-        return CheckListEntity.builder()
-                .id(dto.getId())
+    public List<CheckListDto> toDto(@NotNull final List<CheckListEntity> checkEntities) {
+        return checkEntities.stream()
+                .map(check -> toDto(check))
+                .collect(Collectors.toList());
+
+    }
+
+    @NotNull
+    public CheckListDto toDto(@NotNull final CheckListEntity dto) {
+        return CheckListDto.builder()
+           //     .id(dto.getId())
                 .data(dto.getData())
                 .hora(dto.getHora())
                 .saidaRetorno(dto.getSaidaRetorno())
@@ -38,6 +48,6 @@ public class CheckListMapper {
                 .freioDeEstacionamento(dto.getFreioDeEstacionamento())
                 .build();
     }
+}
 
-    }
 

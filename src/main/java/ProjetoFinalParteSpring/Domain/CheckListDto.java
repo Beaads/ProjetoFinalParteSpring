@@ -1,16 +1,12 @@
 package ProjetoFinalParteSpring.Domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Builder(toBuilder = true)
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
+@Getter
 public class CheckListDto {
-    private int id;
+    private Integer id;
     private String data;
     private String hora;
     private String saidaRetorno;
@@ -38,4 +34,33 @@ public class CheckListDto {
     private String cintoDeSeguranca;
     private String freioDeEstacionamento;
 
+    public CheckListEntity transformaParaDto() {
+        return new CheckListEntity(this.id,
+                                   this.data,
+                                   this.hora,
+                                   this.saidaRetorno,
+                                   this.placa,
+                                   this.motorista,
+                                   this.kmVeiculo,
+                                   this.tracao,
+                                   this.rodoar,
+                                   this.calibragemPneus,
+                                   this.estepe,
+                                   this.freioDianteiro,
+                                   this.freioTraseiro,
+                                   this.amortecedor,
+                                   this.molas,
+                                   this.cambioOleo,
+                                   this.direcaoOleo,
+                                   this.limpezaRadiadorAgua,
+                                   this.oleoMotor,
+                                   this.retrovisor,
+                                   this.paraBrisa,
+                                   this.paraChoqueDianteiro,
+                                   this.paraChoqueTraseiro,
+                                   this.estofamento,
+                                   this.cortinas,
+                                   this.cintoDeSeguranca,
+                                   this.freioDeEstacionamento);
+    }
 }

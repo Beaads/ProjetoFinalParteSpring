@@ -1,14 +1,12 @@
 package ProjetoFinalParteSpring.Domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Data
 @Builder(toBuilder = true)
+@Getter
 @AllArgsConstructor
 @Table(name = "CHECKLIST")
 
@@ -29,37 +27,76 @@ public class CheckListEntity {
     private String motorista;
     @Column(name = "kmVeiculo")
     private String kmVeiculo;
+    @Column(name = "tracao")
     private String tracao;
+    @Column(name = "rodoar")
     private String rodoar;
+    @Column(name = "calibragemPneus")
     private String calibragemPneus;
+    @Column(name = "estepe")
     private String estepe;
+    @Column(name = "freioDianteiro")
     private String freioDianteiro;
+    @Column(name = "freioTraseiro")
     private String freioTraseiro;
+    @Column(name = "amortecedor")
     private String amortecedor;
+    @Column(name = "molas")
     private String molas;
+    @Column(name = "cambioOleo")
     private String cambioOleo;
+    @Column(name = "direcaoOleo")
     private String direcaoOleo;
+    @Column(name = "limpezaRadiadorAgua")
     private String limpezaRadiadorAgua;
+    @Column(name = "oleoMotor")
     private String oleoMotor;
+    @Column(name = "retrovisor")
     private String retrovisor;
+    @Column(name = "paraBrisa")
     private String paraBrisa;
+    @Column(name = "paraChoqueDianteiro")
     private String paraChoqueDianteiro;
+    @Column(name = "paraChoqueTraseiro")
     private String paraChoqueTraseiro;
+    @Column(name = "estofamento")
     private String estofamento;
+    @Column(name = "cortinas")
     private String cortinas;
+    @Column(name = "cintoDeSeguranca")
     private String cintoDeSeguranca;
+    @Column(name = "freioDeEstacionamento")
     private String freioDeEstacionamento;
 
 
+    public CheckListEntity(final String data,
+                           final String hora,
+                           final String saidaRetorno,
+                           final String placa,
+                           final String motorista,
+                           final String kmVeiculo,
+                           final String tracao,
+                           final String rodoar,
+                           final String calibragemPneus,
+                           final String estepe,
+                           final String freioDianteiro,
+                           final String freioTraseiro,
+                           final String amortecedor,
+                           final String molas,
+                           final String cambioOleo,
+                           final String direcaoOleo,
+                           final String limpezaRadiadorAgua,
+                           final String oleoMotor,
+                           final String retrovisor,
+                           final String paraBrisa,
+                           final String paraChoqueDianteiro,
+                           final String paraChoqueTraseiro,
+                           final String estofamento,
+                           final String cortinas,
+                           final String cintoDeSeguranca, final String freioDeEstacionamento) {
+
+    }
     public CheckListEntity() {
 
     }
-
-//    public CheckListDto checkDTO() {
-//        return new CheckListDto(this.id, this.data, this.hora, this.saidaRetorno, this.placa, this.motorista, this.kmVeiculo,
-//                                this.tracao, this.rodoar, this.calibragemPneus, this.estepe, this.freioDianteiro,
-//                                this.freioTraseiro, this.amortecedor, this.molas, this.cambioOleo, this.direcaoOleo,
-//                                this.limpezaRadiadorAgua, this.oleoMotor, this.retrovisor, this.paraBrisa, this.paraChoqueDianteiro,
-//                                this.paraChoqueTraseiro, this.estofamento, this.cortinas, this.cintoDeSeguranca, this.freioDeEstacionamento);
-//    }
 }
