@@ -8,7 +8,6 @@ import java.util.List;
 @Repository
 public interface CheckListDao extends JpaRepository<CheckListEntity, Integer> {
 
-
 //    @NotNull
 //    default CheckListEntity listfindAllCheck() {
 //        final var allCheckIds = listfindAllCheck();

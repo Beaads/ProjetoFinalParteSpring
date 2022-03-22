@@ -2,6 +2,8 @@ package ProjetoFinalParteSpring.Resource;
 
 import ProjetoFinalParteSpring.Domain.CheckListDto;
 import ProjetoFinalParteSpring.Domain.CheckListEntity;
+import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOPost;
+import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOLista;
 import ProjetoFinalParteSpring.Mapper.CheckListMapper;
 import ProjetoFinalParteSpring.Service.CheckListService;
 import lombok.RequiredArgsConstructor;
@@ -24,12 +26,10 @@ import java.util.Optional;
 public class CheckListResource {
 
     private final CheckListService checkListService;
-    private final CheckListMapper mapper;
 
     @Autowired
-
     @GetMapping
-    public ResponseEntity<List<CheckListEntity>> list() {
+    public ResponseEntity<List<CheckListRespostaDTOLista>> list() {
         return new ResponseEntity<>(checkListService.listAll(), HttpStatus.OK);
     }
 
@@ -39,8 +39,7 @@ public class CheckListResource {
     }
 
     @PostMapping
-    public ResponseEntity<CheckListEntity> save (@RequestBody CheckListDto checkDto) {
-        CheckListEntity checkEntity = checkListService.save(checkDto.transformaParaDto());
-        return new ResponseEntity<>(checkEntity, HttpStatus.CREATED);
+    public ResponseEntity<CheckListRespostaDTOPost> save (@RequestBody CheckListEntity checkDto) {
+        return new ResponseEntity<>(checkListService.save(checkDto), HttpStatus.CREATED);
     }
 }

@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Entity
 @Builder(toBuilder = true)
 @Getter
-@AllArgsConstructor
 @Table(name = "CHECKLIST")
 
 public class CheckListEntity {
@@ -68,35 +67,41 @@ public class CheckListEntity {
     @Column(name = "freioDeEstacionamento")
     private String freioDeEstacionamento;
 
-
-    public CheckListEntity(final String data,
-                           final String hora,
-                           final String saidaRetorno,
-                           final String placa,
-                           final String motorista,
-                           final String kmVeiculo,
-                           final String tracao,
-                           final String rodoar,
-                           final String calibragemPneus,
-                           final String estepe,
-                           final String freioDianteiro,
-                           final String freioTraseiro,
-                           final String amortecedor,
-                           final String molas,
-                           final String cambioOleo,
-                           final String direcaoOleo,
-                           final String limpezaRadiadorAgua,
-                           final String oleoMotor,
-                           final String retrovisor,
-                           final String paraBrisa,
-                           final String paraChoqueDianteiro,
-                           final String paraChoqueTraseiro,
-                           final String estofamento,
-                           final String cortinas,
-                           final String cintoDeSeguranca, final String freioDeEstacionamento) {
-
+    public CheckListEntity (Integer id, String data, String hora, String saidaRetorno, String placa, String motorista,
+        String kmVeiculo, String tracao, String rodoar, String calibragemPneus, String estepe, String freioDianteiro,
+        String freioTraseiro, String amortecedor, String molas, String cambioOleo, String direcaoOleo,
+        String limpezaRadiadorAgua, String oleoMotor, String retrovisor, String paraBrisa, String paraChoqueDianteiro,
+        String paraChoqueTraseiro, String estofamento, String cortinas, String cintoDeSeguranca, String freioDeEstacionamento) {
+        this.id = id;
+        this.data = data;
+        this.hora = hora;
+        this.saidaRetorno = saidaRetorno;
+        this.placa = placa;
+        this.motorista = motorista;
+        this.kmVeiculo = kmVeiculo;
+        this.tracao = tracao;
+        this.rodoar = rodoar;
+        this.calibragemPneus = calibragemPneus;
+        this.estepe = estepe;
+        this.freioDianteiro = freioDianteiro;
+        this.freioTraseiro = freioTraseiro;
+        this.amortecedor = amortecedor;
+        this.molas = molas;
+        this.cambioOleo = cambioOleo;
+        this.direcaoOleo = direcaoOleo;
+        this.limpezaRadiadorAgua = limpezaRadiadorAgua;
+        this.oleoMotor = oleoMotor;
+        this.retrovisor = retrovisor;
+        this.paraBrisa = paraBrisa;
+        this.paraChoqueDianteiro = paraChoqueDianteiro;
+        this.paraChoqueTraseiro = paraChoqueTraseiro;
+        this.estofamento = estofamento;
+        this.cortinas = cortinas;
+        this.cintoDeSeguranca = cintoDeSeguranca;
+        this.freioDeEstacionamento = freioDeEstacionamento;
     }
+
     public CheckListEntity() {
-
     }
+
 }

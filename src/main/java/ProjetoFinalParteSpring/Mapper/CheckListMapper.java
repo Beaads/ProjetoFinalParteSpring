@@ -1,53 +1,63 @@
 package ProjetoFinalParteSpring.Mapper;
-import ProjetoFinalParteSpring.Domain.CheckListDto;
+
 import ProjetoFinalParteSpring.Domain.CheckListEntity;
+import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOLista;
+import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOPost;
 import com.sun.istack.NotNull;
 import org.springframework.stereotype.Component;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
 public class CheckListMapper {
-    @NotNull
-    public List<CheckListDto> toDto(@NotNull final List<CheckListEntity> checkEntities) {
-        return checkEntities.stream()
-                .map(check -> toDto(check))
-                .collect(Collectors.toList());
 
+    @NotNull
+    public List<CheckListRespostaDTOLista> transformaDto2(@NotNull final List<CheckListEntity> checkEntities) {
+        return (List<CheckListRespostaDTOLista>) checkEntities.stream()
+                .map(this::transformaDto)
+                .collect(Collectors.toList());
     }
 
-    @NotNull
-    public CheckListDto toDto(@NotNull final CheckListEntity dto) {
-        return CheckListDto.builder()
-           //     .id(dto.getId())
+    public CheckListRespostaDTOLista transformaDto(CheckListEntity dto) {
+        return CheckListRespostaDTOLista.builder()
                 .data(dto.getData())
                 .hora(dto.getHora())
                 .saidaRetorno(dto.getSaidaRetorno())
                 .placa(dto.getPlaca())
                 .motorista(dto.getMotorista())
                 .kmVeiculo(dto.getKmVeiculo())
-                .tracao(dto.getTracao())
-                .rodoar(dto.getRodoar())
-                .calibragemPneus(dto.getCalibragemPneus())
-                .estepe(dto.getEstepe())
-                .freioDianteiro(dto.getFreioDianteiro())
-                .freioTraseiro(dto.getFreioTraseiro())
-                .amortecedor(dto.getAmortecedor())
-                .molas(dto.getMolas())
-                .cambioOleo(dto.getCambioOleo())
-                .direcaoOleo(dto.getDirecaoOleo())
-                .limpezaRadiadorAgua(dto.getLimpezaRadiadorAgua())
-                .oleoMotor(dto.getOleoMotor())
-                .retrovisor(dto.getRetrovisor())
-                .paraBrisa(dto.getParaBrisa())
-                .paraChoqueDianteiro(dto.getParaChoqueDianteiro())
-                .paraChoqueTraseiro(dto.getParaChoqueTraseiro())
-                .estofamento(dto.getEstofamento())
-                .cortinas(dto.getCortinas())
-                .cintoDeSeguranca(dto.getCintoDeSeguranca())
-                .freioDeEstacionamento(dto.getFreioDeEstacionamento())
+                .build();
+    }
+
+    public CheckListRespostaDTOPost transformaDto3(CheckListEntity entity) {
+        return CheckListRespostaDTOPost.builder()
+                .data(entity.getData())
+                .hora(entity.getHora())
+                .saidaRetorno(entity.getSaidaRetorno())
+                .placa(entity.getPlaca())
+                .motorista(entity.getMotorista())
+                .kmVeiculo(entity.getKmVeiculo())
+                .tracao(entity.getTracao())
+                .rodoar(entity.getRodoar())
+                .calibragemPneus(entity.getCalibragemPneus())
+                .estepe(entity.getEstepe())
+                .freioDianteiro(entity.getFreioDianteiro())
+                .freioTraseiro(entity.getFreioTraseiro())
+                .amortecedor(entity.getAmortecedor())
+                .molas(entity.getMolas())
+                .cambioOleo(entity.getCambioOleo())
+                .direcaoOleo(entity.getDirecaoOleo())
+                .limpezaRadiadorAgua(entity.getLimpezaRadiadorAgua())
+                .oleoMotor(entity.getOleoMotor())
+                .retrovisor(entity.getRetrovisor())
+                .paraBrisa(entity.getParaBrisa())
+                .paraChoqueDianteiro(entity.getParaChoqueDianteiro())
+                .paraChoqueTraseiro(entity.getParaChoqueTraseiro())
+                .estofamento(entity.getEstofamento())
+                .cortinas(entity.getCortinas())
+                .cintoDeSeguranca(entity.getCintoDeSeguranca())
+                .freioDeEstacionamento(entity.getFreioDeEstacionamento())
                 .build();
     }
 }
-
-
