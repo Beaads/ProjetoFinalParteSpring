@@ -1,7 +1,6 @@
 package ProjetoFinalParteSpring.Service;
 
 import ProjetoFinalParteSpring.Dao.CheckListDao;
-import ProjetoFinalParteSpring.Domain.CheckListDto;
 import ProjetoFinalParteSpring.Domain.CheckListEntity;
 import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOLista;
 import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOPost;
@@ -23,7 +22,6 @@ public class CheckListService {
         final List<CheckListEntity> allcheck = checkListDAO.findAll();
         return mapper.transformaDto2(allcheck);
     }
-
 
     public Optional<CheckListEntity> findByIdChecklist(Integer id) {
         return checkListDAO.findById(id);

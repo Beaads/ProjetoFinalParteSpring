@@ -34,6 +34,5 @@ public class CheckListRespostaDTOPost {
     private String cortinas;
     private String cintoDeSeguranca;
     private String freioDeEstacionamento;
-
 }
 

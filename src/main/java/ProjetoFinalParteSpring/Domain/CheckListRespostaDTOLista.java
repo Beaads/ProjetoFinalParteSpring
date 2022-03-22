@@ -14,5 +14,4 @@ public class CheckListRespostaDTOLista {
     private String placa;
     private String motorista;
     private String kmVeiculo;
-
 }

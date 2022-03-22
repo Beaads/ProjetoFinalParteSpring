@@ -1,10 +1,8 @@
 package ProjetoFinalParteSpring.Resource;
 
-import ProjetoFinalParteSpring.Domain.CheckListDto;
 import ProjetoFinalParteSpring.Domain.CheckListEntity;
 import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOPost;
 import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOLista;
-import ProjetoFinalParteSpring.Mapper.CheckListMapper;
 import ProjetoFinalParteSpring.Service.CheckListService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 

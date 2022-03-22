@@ -1,14 +1,12 @@
 package ProjetoFinalParteSpring.Domain;
 
-import com.sun.istack.NotNull;
 import lombok.*;
 
 @Builder(toBuilder = true)
 @Data
 @Getter
 public class CheckListDto {
-
-   private Integer id;
+    private Integer id;
     private String data;
     private String hora;
     private String saidaRetorno;
@@ -35,15 +33,5 @@ public class CheckListDto {
     private String cortinas;
     private String cintoDeSeguranca;
     private String freioDeEstacionamento;
-
-    public CheckListEntity transformaParaDto() {
-        return new CheckListEntity(id, data, hora, saidaRetorno, placa, motorista, kmVeiculo, tracao, rodoar,
-                                   calibragemPneus, estepe, freioDianteiro, freioTraseiro, amortecedor, molas,
-                                   cambioOleo, direcaoOleo, limpezaRadiadorAgua, oleoMotor, retrovisor, paraBrisa,
-                                   paraChoqueDianteiro, paraChoqueTraseiro, estofamento, cortinas, cintoDeSeguranca,
-                                   freioDeEstacionamento);
-
-
-    }
 }
 

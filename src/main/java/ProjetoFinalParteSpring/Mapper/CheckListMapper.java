@@ -5,7 +5,6 @@ import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOLista;
 import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOPost;
 import com.sun.istack.NotNull;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,7 +13,7 @@ public class CheckListMapper {
 
     @NotNull
     public List<CheckListRespostaDTOLista> transformaDto2(@NotNull final List<CheckListEntity> checkEntities) {
-        return (List<CheckListRespostaDTOLista>) checkEntities.stream()
+        return checkEntities.stream()
                 .map(this::transformaDto)
                 .collect(Collectors.toList());
     }
