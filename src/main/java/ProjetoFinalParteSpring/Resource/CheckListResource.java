@@ -16,7 +16,7 @@ import java.util.Optional;
 @EnableJpaRepositories
 @RequestMapping("checklist")
 @RestController
-@RequiredArgsConstructor
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 
 //http://localhost:8080/checklist
 
@@ -24,7 +24,6 @@ public class CheckListResource {
 
     private final CheckListService checkListService;
 
-    @Autowired
     @GetMapping
     public ResponseEntity<List<CheckListRespostaDTOLista>> list() {
         return new ResponseEntity<>(checkListService.listAll(), HttpStatus.OK);

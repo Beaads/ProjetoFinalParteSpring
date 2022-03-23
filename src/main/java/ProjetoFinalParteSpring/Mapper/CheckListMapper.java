@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class CheckListMapper {
 
     @NotNull
-    public List<CheckListRespostaDTOLista> transformaDto2(@NotNull final List<CheckListEntity> checkEntities) {
+    public List<CheckListRespostaDTOLista> transformaDtoList(@NotNull final List<CheckListEntity> checkEntities) {
         return checkEntities.stream()
                 .map(this::transformaDto)
                 .collect(Collectors.toList());
@@ -25,18 +25,18 @@ public class CheckListMapper {
                 .saidaRetorno(dto.getSaidaRetorno())
                 .placa(dto.getPlaca())
                 .motorista(dto.getMotorista())
-                .kmVeiculo(dto.getKmVeiculo())
+                .kmVeiculo(String.valueOf(dto.getKmVeiculo()))
                 .build();
     }
 
-    public CheckListRespostaDTOPost transformaDto3(CheckListEntity entity) {
+    public CheckListRespostaDTOPost transformaDtoPost(CheckListEntity entity) {
         return CheckListRespostaDTOPost.builder()
                 .data(entity.getData())
                 .hora(entity.getHora())
                 .saidaRetorno(entity.getSaidaRetorno())
                 .placa(entity.getPlaca())
                 .motorista(entity.getMotorista())
-                .kmVeiculo(entity.getKmVeiculo())
+                .kmVeiculo(String.valueOf(entity.getKmVeiculo()))
                 .tracao(entity.getTracao())
                 .rodoar(entity.getRodoar())
                 .calibragemPneus(entity.getCalibragemPneus())

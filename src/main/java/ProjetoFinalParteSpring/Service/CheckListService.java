@@ -6,13 +6,14 @@ import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOLista;
 import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOPost;
 import ProjetoFinalParteSpring.Mapper.CheckListMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class CheckListService {
 
     private final CheckListDao checkListDAO;
@@ -20,7 +21,7 @@ public class CheckListService {
 
     public List<CheckListRespostaDTOLista> listAll() {
         final List<CheckListEntity> allcheck = checkListDAO.findAll();
-        return mapper.transformaDto2(allcheck);
+        return mapper.transformaDtoList(allcheck);
     }
 
     public Optional<CheckListEntity> findByIdChecklist(Integer id) {
@@ -30,6 +31,6 @@ public class CheckListService {
     @Transactional
     public CheckListRespostaDTOPost save(CheckListEntity checkList) {
         final CheckListEntity post = checkListDAO.save(checkList);
-        return mapper.transformaDto3(post);
+        return mapper.transformaDtoPost(post);
     }
 }
