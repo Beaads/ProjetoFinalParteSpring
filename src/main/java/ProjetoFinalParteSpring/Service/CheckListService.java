@@ -33,4 +33,8 @@ public class CheckListService {
         final CheckListEntity post = checkListDAO.save(checkList);
         return mapper.transformaDtoPost(post);
     }
+
+    public void delete(Integer id){
+        checkListDAO.deleteById(id);
+    }
 }

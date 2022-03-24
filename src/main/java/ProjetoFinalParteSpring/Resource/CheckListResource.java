@@ -1,5 +1,6 @@
 package ProjetoFinalParteSpring.Resource;
 
+import ProjetoFinalParteSpring.Domain.CheckListDto;
 import ProjetoFinalParteSpring.Domain.CheckListEntity;
 import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOPost;
 import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOLista;
@@ -30,12 +31,18 @@ public class CheckListResource {
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<Optional> findById(@PathVariable int id){
+    public ResponseEntity<Optional> findById(@PathVariable Integer id){
         return new ResponseEntity<>(checkListService.findByIdChecklist(id), HttpStatus.OK);
     }
 
     @PostMapping
     public ResponseEntity<CheckListRespostaDTOPost> save (@RequestBody CheckListEntity checkDto) {
         return new ResponseEntity<>(checkListService.save(checkDto), HttpStatus.CREATED);
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<?> delete(@PathVariable Integer id){
+        checkListService.delete(id);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).build();
     }
 }
