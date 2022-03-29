@@ -28,6 +28,7 @@ public class CheckListService {
         return checkListDAO.save(checkList);
     }
 
+    @Transactional
     public void delete(Integer id){
         checkListDAO.deleteById(id);
     }

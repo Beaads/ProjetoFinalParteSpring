@@ -68,5 +68,4 @@ public class CheckListEntity {
     private String cintoDeSeguranca;
     @Column(name = "freio_de_estacionamento")
     private String freioDeEstacionamento;
-
 }

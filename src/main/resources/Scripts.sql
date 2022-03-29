@@ -7,7 +7,7 @@ create table checklist
     saida_retorno          varchar(7)            not null,
     placa                 varchar(20)           not null,
     motorista             varchar(50)           not null,
-    km_veiculo             int                   not null
+    km_veiculo             numeric              not null
         constraint km_positivo check ( kmveiculo >= 0 ),
     tracao                varchar(4)            not null,
     rodoar                varchar(4)            not null,
