@@ -5,6 +5,7 @@ import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOPost;
 import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOLista;
 import ProjetoFinalParteSpring.Mapper.CheckListMapper;
 import ProjetoFinalParteSpring.Service.CheckListService;
+import ProjetoFinalParteSpring.Service.UsuarionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
