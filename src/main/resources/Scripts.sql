@@ -30,3 +30,11 @@ create table checklist
     cinto_de_seguranca      varchar(4)            not null,
     freio_de_estacionamento varchar(4)            not null
 );
+
+CREATE TABLE USUARIO (
+                         id BIGSERIAL PRIMARY KEY not null,
+                         usuario VARCHAR(20),
+                         senha VARCHAR(4)
+);
+
+SELECT * FROM usuario;
