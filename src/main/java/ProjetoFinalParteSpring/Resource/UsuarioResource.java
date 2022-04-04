@@ -1,8 +1,7 @@
 package ProjetoFinalParteSpring.Resource;
 
-import ProjetoFinalParteSpring.Domain.CheckListRespostaDTOLista;
 import ProjetoFinalParteSpring.Domain.UsuarioEntity;
-import ProjetoFinalParteSpring.Service.UsuarionService;
+import ProjetoFinalParteSpring.Service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -20,7 +19,7 @@ import java.util.Optional;
 
 public class UsuarioResource {
 
-    private final UsuarionService usuarionService;
+    private final UsuarioService usuarionService;
 
     @GetMapping
     public ResponseEntity<List<UsuarioEntity>> list() {
